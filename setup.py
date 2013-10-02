@@ -6,7 +6,7 @@ setup(
     author='Dirk Uys',
     author_email='dirk@p2pu.org',
     packages=['s3imageresize'],
-    scripts=['bin/s3imageresize.py'],
+    scripts=['bin/s3imagefolderresize.py'],
     url='http://pypi.python.org/pypi/s3imageresize/',
     license='LICENSE.txt',
     description='Script to resize images on S3.',
