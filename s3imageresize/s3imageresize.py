@@ -3,7 +3,8 @@ import boto
 from PIL import Image
 import tempfile
 
-def resize_images(bucket, key_prefix, pil_size):
+def resize_image_folder(bucket, key_prefix, pil_size):
+    """ This function resizes all the images in a folder """
     con = boto.connect_s3()
     b = con.get_bucket(bucket)
     for key in b.list(key_prefix):
@@ -28,6 +29,3 @@ def resize_images(bucket, key_prefix, pil_size):
             small.seek(0)
             key.set_metadata('size', str(pil_size))
             key.set_contents_from_file(small, headers={'Content-Type': key.content_type})
-
-
-resize_images('p2pu-resources', 'test/', (140,140))
