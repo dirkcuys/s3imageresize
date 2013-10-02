@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='S3ImageResize',
-    version='0.1.3',
+    version='0.1.4',
     author='Dirk Uys',
     author_email='dirk@p2pu.org',
     packages=['s3imageresize'],
