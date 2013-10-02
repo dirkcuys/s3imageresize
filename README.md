@@ -11,6 +11,7 @@ Make sure your `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` are exported as e
 In code:
 
     from s3imageresize import resize_image_folder
+    resize_image_folder(bucket_name, prefix, (width, height))
 
 From the command line:
 
