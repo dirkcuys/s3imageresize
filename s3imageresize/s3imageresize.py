@@ -9,14 +9,12 @@ def resize_image_folder(bucket, key_prefix, pil_size):
     b = con.get_bucket(bucket)
     for key in b.list(key_prefix):
         key = b.get_key(key.name)
-        print(key)
         if 'image' not in key.content_type:
             continue
         size = key.get_metadata('size')
         if size == str(pil_size):
             continue
         with tempfile.TemporaryFile() as big, tempfile.TemporaryFile() as small:
-            print('resizing')
             # download file and resize
             key.get_contents_to_file(big)
             big.flush()
